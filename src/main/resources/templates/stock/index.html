@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>カブいちらん</title>
+</head>
+<body>
+  <h1>カブいちらん</h1>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>なまえ</th>
+    </tr>
+    <tr th:each="stock : ${stockList}" th:object="${stock}">
+      <td th:text="*{id}">0</td>
+      <td th:text="*{name}" ><a href="chart/index.html" th:href="chart/index.html">なまえ<</a></td>
+    </tr>
+  </table>
+</body>
+</html>

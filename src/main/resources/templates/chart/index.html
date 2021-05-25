@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<script type="text/javascript" th:src="@{ajax.js}"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>チャート</title>
+</head>
+<body>
+    <h1><span th:text="${stock.name " >ほげ</span>のチャート</h1>
+    <table>
+        <tr>
+            <th>日付</th>
+            <th>価格</th>
+        </tr>
+        <tr th:each="chart : ${chatList}" th:object="${chart}">
+            <td th:text="*{#temporals.format(plotDate, 'uuuu-MM-dd')}" >2021-05-25</td>
+            <td><span th:text="*{price}"></span>ベル</td>
+        </tr>
+    </table>
+</body>
+</html>
